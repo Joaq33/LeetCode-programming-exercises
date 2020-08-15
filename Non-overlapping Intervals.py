@@ -8,6 +8,5 @@ class Solution:
             print("index", index, f_item, s_item)
 
 
-
-sol=Solution()
-print(sol.eraseOverlapIntervals([[1,2],[2,3],[3,4]]))
+sol = Solution()
+print(sol.eraseOverlapIntervals([[1, 2], [2, 3], [3, 4]]))
