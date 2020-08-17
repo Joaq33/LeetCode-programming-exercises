@@ -4,18 +4,26 @@ class Solution:
 
         def rec(newprices, segundo):
             nonlocal ans
-            posibles=[]
+            posibles=[0]
             if len(newprices) < 2:
                 return 0
             for index, price in enumerate(newprices[1:]):
-                print(newprices)
-                temp = newprices[0] - price
-                temp2 = rec(newprices[index + 1:], True)
-                temp+=temp2
-                posibles.append(temp)
-            return max(posibles)
+                if price<newprices[0]:
+                    #saber si el precio es mayor q el q siga
+                    temp = newprices[0] - price
+                    temp2 = rec(newprices[index + 1:], True)
+                    temp+=temp2
+                    posibles.append(temp)
+            maximo=max(posibles)
+            if maximo<0:
+                maximo=0
+            return maximo
 
-        rec(prices, False)
+        temp=[]
+        for item in range(len(prices)):
+            temp+=[rec(prices[item:], False)]
+
+        print("temp",temp)
         print(prices, ans)
 
 
