@@ -5,7 +5,7 @@ class Solution:
         ans=[0]*num_people
         distribution=1
         person=0
-        while candies>0:
+        while True:
             if candies<distribution:
                 ans[person]+=candies
                 break
