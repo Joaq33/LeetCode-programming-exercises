@@ -1,3 +1,4 @@
+# Done
 class Solution:
     def distributeCandies(self, candies: int, num_people: int):
         if num_people==0:

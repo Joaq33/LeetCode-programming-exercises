@@ -1,3 +1,4 @@
+# Works but inefficient
 class Solution:
     def maxProfit(self, prices) -> int:
 
