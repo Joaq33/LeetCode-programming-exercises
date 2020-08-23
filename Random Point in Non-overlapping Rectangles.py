@@ -1,25 +1,23 @@
 # Done but not returning
 
 import random
+
+
 class Solution:
 
     def __init__(self, rects):
-        print(rects[0][0][0][2] - rects[0][0][0][0])
-
         self.probabilities = 0
         self.list_prob = []
         for rectangle in rects[0][0]:
             print(rectangle)
             ancho = rectangle[2] - rectangle[0]
-            if ancho==0:
-                ancho=1
+            if ancho == 0:
+                ancho = 1
             alto = rectangle[3] - rectangle[1]
-            if alto==0:
-                alto=1
-            self.list_prob.append(ancho*alto)
+            if alto == 0:
+                alto = 1
+            self.list_prob.append(ancho * alto)
             self.probabilities += ancho * alto
-
-
 
     def pick(self):
 
