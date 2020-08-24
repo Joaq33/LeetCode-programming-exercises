@@ -21,9 +21,7 @@ class StreamChecker:
 
 # Your StreamChecker object will be instantiated and called as such:
 words = ["cde", "abc", "f", "ba", "kl","bcd"]
-words = ["cd","f","kl"]
 obj = StreamChecker(words)
 letters = [["a"], ["b"], ["c"], ["d"], ["e"]]
-letters = [["a"],["b"],["c"],["d"],["e"],["f"],["g"],["h"],["i"],["j"],["k"],["l"]]
 for [letter] in letters:
     param_1 = obj.query(letter)
