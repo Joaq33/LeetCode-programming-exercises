@@ -9,5 +9,5 @@ class Solution:
 
 
 obj = Solution()
-s = ""
+s = "asd   "
 print(obj.lengthOfLastWord(s))
