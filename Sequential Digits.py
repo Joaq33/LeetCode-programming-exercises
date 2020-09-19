@@ -1,11 +1,13 @@
 # Done
 from typing import List
+
+
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
         stl = str(low)
         lar = len(stl)
         first = int(stl[0])
-        if first > 10-lar:
+        if first > 10 - lar:
             lar += 1
             first = 1
 
@@ -24,7 +26,6 @@ class Solution:
             else:
                 first = 1
                 lar += 1
-
         return []
 
 
