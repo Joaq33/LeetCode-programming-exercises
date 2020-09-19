@@ -1,5 +1,6 @@
 # Done
 class Solution:
+    @profile
     def toGoatLatin(self, S: str) -> str:
         if S == "":
             return ""
