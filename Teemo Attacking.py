@@ -6,13 +6,13 @@ class Solution:
     def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
         if not timeSeries or duration == 0:
             return 0
-        ans = 0
+        ans = duration
         last_tick = timeSeries[0]
         for attack in timeSeries[1:]:
             dif = attack - last_tick
             ans += duration if dif >= duration else dif
             last_tick = attack
-        return ans + duration
+        return ans
 
 
 obj = Solution()
