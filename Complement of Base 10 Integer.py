@@ -1,3 +1,4 @@
+# Done
 class Solution:
     def bitwiseComplement(self, N: int) -> int:
         return 2 ** len("{0:b}".format(N)) - 1 ^ N
