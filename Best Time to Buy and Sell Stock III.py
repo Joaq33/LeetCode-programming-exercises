@@ -17,7 +17,7 @@ class Solution:
                         continue
                     for i in range(index + 2, len(new_prices) - 1):
                         temp2 = rec(new_prices[i:], True)
-                        posibles.append(temp+temp2)
+                        posibles.append(temp + temp2)
                 posibles.append(temp)
             return max(posibles)
 
@@ -29,7 +29,7 @@ class Solution:
 
 coso = Solution()
 prices = [3, 3, 5, 0, 0, 3, 1, 4]
-prices=[1,2,3,4,5]
+# prices = [1, 2, 3, 4, 5]
 
 # prices=[1,2,3,4,5]
 print(coso.maxProfit(prices))

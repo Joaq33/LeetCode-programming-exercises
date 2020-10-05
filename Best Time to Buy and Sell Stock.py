@@ -11,6 +11,7 @@ class Solution:
         for i in range(1, len(prices)):
             if prices[i] < minim:
                 minim = prices[i]
+                continue
             dif = prices[i] - minim
             if dif > ans:
                 ans = dif

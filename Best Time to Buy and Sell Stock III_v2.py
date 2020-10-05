@@ -1,10 +1,8 @@
 # option 2 incomplete
 class Solution:
     def maxProfit(self, prices) -> int:
-        for division in range(1, len(prices)):
-            print(division, prices[:division + 1], prices[division + 1:])
-            print(max(prices[:division + 1]))
-        pass
+        arr = [None]*len(prices)
+        while
 
 
 coso = Solution()
