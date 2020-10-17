@@ -21,6 +21,23 @@ class Solution:
                 return bs(pivot + 1, right)
 
         return bs(0, len(nums))
+    def search2(self, nums: List[int], target: int) -> int:
+        """
+        The best answer in the page
+        :param nums:
+        :param target:
+        :return:
+        """
+        left, right = 0, len(nums)-1
+        while left <= right:
+            pivot = (left + right)//2
+            if target == nums[pivot]:
+                return pivot
+            if target > nums[pivot]:
+                left = pivot+1
+            else:
+                right = pivot-1
+        return -1
 
 
 obj = Solution()

@@ -1,5 +1,22 @@
 # These are some handy functions to enhance the programming experience
-
+def bsearch(self, nums: List[int], target: int) -> int:
+    """
+    Best binary search time complexity.
+    :param self:
+    :param nums:
+    :param target:
+    :return:
+    """
+    left, right = 0, len(nums)-1
+    while left <= right:
+        pivot = (left + right)//2
+        if target == nums[pivot]:
+            return pivot
+        if target > nums[pivot]:
+            left = pivot+1
+        else:
+            right = pivot-1
+    return -1
 def reverse(nums, start, end):
     """
     Reverse a list.
