@@ -44,7 +44,7 @@ def bfs(self, root: TreeNode) -> int:
 def BFS(self, s):
     """
     Breadth First Search
-    PROBABLEMENTE PEOR Q EL DE ABAJO (mucho)
+    PROBABLEMENTE PEOR Q EL DE ARRIBA(mucho)
     :param self:
     :param s:
     :return:
