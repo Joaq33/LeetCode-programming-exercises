@@ -1,2 +1,2 @@
 # LeetCode-programming-exercises
-Collection of weekly LeetCode exercises resolved
+Solved LeetCode Weekly Workout Compilation
