@@ -19,7 +19,6 @@ class Solution:
         if end - begin > 1 or ans < (end - begin - 3) // 2:
             tmp = 0
             for n in range(begin, end +1):
-                # print(begin, end)
                 if seats[n] == 0:
                     tmp += 1
                 elif tmp > 0:
