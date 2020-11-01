@@ -116,3 +116,59 @@ def list_to_linked(list: []):
         cur.next = ListNode(item)
         cur = cur.next
     return head
+
+def list_to_btree(l: []) -> TreeNode:
+    """
+    Convert a list into a binary tree.
+    :param l:
+    :return:
+    """
+    head = TreeNode(val=l[0])
+    index = 1
+    def rec(cur):
+        nonlocal index
+        if l[index]:
+            cur.left = TreeNode(l[index])
+        index += 1
+        if l[index]:
+            cur.right = TreeNode(l[index])
+        if cur.left:
+            index += 1
+            rec(cur.left)
+        if cur.right:
+            index += 1
+            rec(cur.right)
+    try:
+        rec(head)
+    except:
+        pass
+    return head
+
+def btree_to_list(head: TreeNode) -> []:
+    """
+    Convert binary-tree into list
+    :param head:
+    :return:
+    """
+    ans = [head.val]
+
+    def rec(cur):
+        queue = []
+        if cur.left:
+            ans.append(cur.left.val)
+            queue.append(cur.left)
+        else:
+            ans.append(None)
+        if cur.right:
+            ans.append(cur.right.val)
+            queue.append(cur.right)
+        else:
+            ans.append(None)
+        for item in queue:
+            rec(item)
+
+    rec(head)
+    last = len(ans) - 1
+    while not ans[last]:
+        last -= 1
+    return ans[:last + 1]
