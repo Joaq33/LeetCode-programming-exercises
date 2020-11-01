@@ -162,3 +162,6 @@ obj.recoverTree(tree)
 assert (ret := btree_to_list(tree)) == [2, 1, 4, None, None, 3], ret
 
 print("Tests passed.")
+asd = "Hola"
+new = "coso" + asd
+print(new*3, new, "coso")
