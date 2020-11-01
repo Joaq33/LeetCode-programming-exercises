@@ -149,14 +149,15 @@ class Solution:
 
 
 obj = Solution()
-
 root = [2, 3, 1]
 tree = list_to_btree(root)
 obj.recoverTree(tree)
 assert (ret := btree_to_list(tree)) == [2, 1, 3], ret
 
+obj = Solution()
 root = [3, 1, 4, None, None, 2]
 tree = list_to_btree(root)
+# print(btree_to_list(tree))
 obj.recoverTree(tree)
 assert (ret := btree_to_list(tree)) == [2, 1, 4, None, None, 3], ret
 
