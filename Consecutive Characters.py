@@ -1,3 +1,4 @@
+# Done
 class Solution:
     def maxPower(self, s: str) -> int:
         ans = 0
