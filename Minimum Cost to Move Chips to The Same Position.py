@@ -3,7 +3,6 @@ from typing import List
 
 
 class Solution:
-    @profile
     def minCostToMoveChips(self, position: List[int]) -> int:
         odd = even = 0
         for i in position:
