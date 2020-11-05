@@ -7,16 +7,17 @@ def bsearch(self, nums: List[int], target: int) -> int:
     :param target:
     :return:
     """
-    left, right = 0, len(nums)-1
+    left, right = 0, len(nums) - 1
     while left <= right:
-        pivot = (left + right)//2
+        pivot = (left + right) // 2
         if target == nums[pivot]:
             return pivot
         if target > nums[pivot]:
-            left = pivot+1
+            left = pivot + 1
         else:
-            right = pivot-1
+            right = pivot - 1
     return -1
+
 
 def bfs(self, root: TreeNode) -> int:
     """
@@ -41,6 +42,15 @@ def bfs(self, root: TreeNode) -> int:
         queue = next_queue
         level += 1
     return level
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 def BFS(self, s):
     """
     Breadth First Search
@@ -77,6 +87,7 @@ def BFS(self, s):
                 queue.append(i)
                 visited[i] = True
 
+
 def reverse(nums, start, end):
     """
     Reverse a list.
@@ -90,12 +101,15 @@ def reverse(nums, start, end):
         start += 1
         end -= 1
 
+
 def linked_to_list(head: ListNode):
     """
     Convert a linked list into a list.
     :param head:
     :return:
     """
+    if not head:
+        return None
     ans = [head.val]
     cur = head
     while cur.next:
@@ -104,18 +118,21 @@ def linked_to_list(head: ListNode):
     return ans
 
 
-def list_to_linked(list: []):
+def list_to_linked(l: []):
     """
     Convert a list into a linked list.
-    :param list:
+    :param l:
     :return:
     """
-    head = ListNode(list[0])
+    if not l:
+        return None
+    head = ListNode(l[0])
     cur = head
-    for item in list[1:]:
+    for item in l[1:]:
         cur.next = ListNode(item)
         cur = cur.next
     return head
+
 
 def list_to_btree(l: []) -> TreeNode:
     """
@@ -125,6 +142,7 @@ def list_to_btree(l: []) -> TreeNode:
     """
     head = TreeNode(val=l[0])
     index = 1
+
     def rec(cur):
         nonlocal index
         if l[index]:
@@ -138,11 +156,13 @@ def list_to_btree(l: []) -> TreeNode:
         if cur.right:
             index += 1
             rec(cur.right)
+
     try:
         rec(head)
     except:
         pass
     return head
+
 
 def btree_to_list(head: TreeNode) -> []:
     """
