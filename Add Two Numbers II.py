@@ -50,7 +50,6 @@ class Solution:
             l2 = l2.next
         number = str(number1 + number2)
         head = ListNode(val=int(number[0]))
-        # print(number1)
         cur = head
         for letter in number[1:]:
             cur.next = ListNode(int(letter))
