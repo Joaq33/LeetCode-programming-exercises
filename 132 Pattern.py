@@ -19,7 +19,7 @@ class Solution:
         for cur in nums[2:]:
             print(minim, cur, maxim)
             if minim < cur < maxim:
-                return True
+                return True|
             first = second
             second = cur
             minim = min(minim, first)
