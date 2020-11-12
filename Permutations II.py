@@ -26,8 +26,6 @@ class Solution:
 obj = Solution()
 
 nums = [1, 1, 2]
-assert [[1, 1, 2],
-        [1, 2, 1],
-        [2, 1, 1]] == (ret := obj.permuteUnique(nums)), ret
+assert [[1, 1, 2], [1, 2, 1], [2, 1, 1]] == (ret := obj.permuteUnique(nums)), ret
 
 print("Tests passed.")
