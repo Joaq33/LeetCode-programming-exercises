@@ -15,12 +15,12 @@ class Solution:
             last = n
             ways[n].append(i)
         queue = [0]
-        steps = 0
+        level = 0
         while queue:
             next_queue = []
             for node in queue:
                 if node == len(arr) - 1:
-                    return steps
+                    return level
                 for item in ways[arr[node]][::-1]:
                     if item not in visited:
                         visited.add(item)
@@ -32,7 +32,7 @@ class Solution:
                     visited.add(node - 1)
                     next_queue.append(node - 1)
             queue = next_queue
-            steps += 1
+            level += 1
 
 
 obj = Solution()
