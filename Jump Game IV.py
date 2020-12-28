@@ -2,9 +2,9 @@
 from typing import List
 from collections import defaultdict
 
-
 class Solution:
     def minJumps(self, arr: List[int]) -> int:
+
         visited = {0, -1}
         ways = defaultdict(list)
         last = None

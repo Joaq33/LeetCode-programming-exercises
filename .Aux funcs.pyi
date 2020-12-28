@@ -18,6 +18,12 @@ def bsearch(self, nums: List[int], target: int) -> int:
             right = pivot - 1
     return -1
 
+# infinite while counter (Optimal for bfs)
+from itertools import count
+
+for step in count():
+    print(step)
+
 
 def bfs(self, root: TreeNode) -> int:
     """
