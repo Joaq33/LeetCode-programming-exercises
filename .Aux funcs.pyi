@@ -1,4 +1,28 @@
 # These are some handy functions to enhance the programming experience
+
+#############################################################
+#############################################################
+
+# infinite while counter (Optimal for bfs)
+from itertools import count
+
+for step in count():
+    print(step)
+
+
+#############################################################
+#############################################################
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+#############################################################
+#############################################################
+
 def bsearch(self, nums: List[int], target: int) -> int:
     """
     Best binary search time complexity.
@@ -17,12 +41,6 @@ def bsearch(self, nums: List[int], target: int) -> int:
         else:
             right = pivot - 1
     return -1
-
-# infinite while counter (Optimal for bfs)
-from itertools import count
-
-for step in count():
-    print(step)
 
 
 def bfs(self, root: TreeNode) -> int:
@@ -48,13 +66,6 @@ def bfs(self, root: TreeNode) -> int:
         queue = next_queue
         level += 1
     return level
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
 
 def BFS(self, s):
@@ -94,6 +105,9 @@ def BFS(self, s):
                 visited[i] = True
 
 
+#############################################################
+#############################################################
+
 def reverse(nums, start, end):
     """
     Reverse a list.
@@ -107,6 +121,9 @@ def reverse(nums, start, end):
         start += 1
         end -= 1
 
+
+#############################################################
+#############################################################
 
 def linked_to_list(head: ListNode):
     """
@@ -124,6 +141,9 @@ def linked_to_list(head: ListNode):
     return ans
 
 
+#############################################################
+#############################################################
+
 def list_to_linked(l: []):
     """
     Convert a list into a linked list.
@@ -139,6 +159,9 @@ def list_to_linked(l: []):
         cur = cur.next
     return head
 
+
+#############################################################
+#############################################################
 
 def list_to_btree(l: []) -> TreeNode:
     """
@@ -198,3 +221,32 @@ def btree_to_list(head: TreeNode) -> []:
     while not ans[last]:
         last -= 1
     return ans[:last + 1]
+
+
+#############################################################
+#############################################################
+
+# to write a List to a .txt
+# define list of places
+places_list = ['Berlin', 'Cape Town', 'Sydney', 'Moscow']
+
+with open('listfile.txt', 'w') as filehandle:
+    filehandle.writelines("%s\n" % place for place in places_list)
+
+# this part is in another file
+# define empty list
+places = []
+
+# open file and read the content in a list
+with open('listfile.txt', 'r') as filehandle:
+    filecontents = filehandle.readlines()
+
+    for line in filecontents:
+        # remove linebreak which is the last character of the string
+        current_place = line[:-1]
+
+        # add item to the list
+        places.append(current_place)
+
+#############################################################
+#############################################################
