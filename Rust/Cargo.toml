@@ -1,0 +1,13 @@
+[package]
+name = "leetcode"
+version = "0.1.0"
+authors = ["Joaq33 <joakoillia@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "fizz_buzz"
+path = "uncompleted/fizz_buzz.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
