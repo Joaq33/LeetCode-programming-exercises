@@ -177,6 +177,7 @@ class Bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 #############################################################
 #############################################################
 
@@ -264,6 +265,98 @@ with open('listfile.txt', 'r') as filehandle:
 
         # add item to the list
         places.append(current_place)
+
+#############################################################
+#############################################################
+"""
+Leetcode's way of printing and converting trees to strings
+"""
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+def treenode_to_string(root):
+    """
+    convert a tree to string
+    :param root:
+    :return:
+    """
+    if not root:
+        return "[]"
+    output = ""
+    queue = [root]
+    current = 0
+    while current != len(queue):
+        node = queue[current]
+        current = current + 1
+
+        if not node:
+            output += "null, "
+            continue
+
+        output += str(node.val) + ", "
+        queue.append(node.left)
+        queue.append(node.right)
+    return "[" + output[:-2] + "]"
+
+
+def string_to_treenode(input):
+    """
+    convert a string to a tree
+    :param input:
+    :return:
+    """
+    input = input.strip()
+    input = input[1:-1]
+    if not input:
+        return None
+
+    inputValues = [s.strip() for s in input.split(',')]
+    root = TreeNode(int(inputValues[0]))
+    nodeQueue = [root]
+    front = 0
+    index = 1
+    while index < len(inputValues):
+        node = nodeQueue[front]
+        front = front + 1
+
+        item = inputValues[index]
+        index = index + 1
+        if item != "null":
+            leftNumber = int(item)
+            node.left = TreeNode(leftNumber)
+            nodeQueue.append(node.left)
+
+        if index >= len(inputValues):
+            break
+
+        item = inputValues[index]
+        index = index + 1
+        if item != "null":
+            rightNumber = int(item)
+            node.right = TreeNode(rightNumber)
+            nodeQueue.append(node.right)
+    return root
+
+
+def pretty_print_tree(node, prefix="", isLeft=True):
+    if not node:
+        print("Empty Tree")
+        return
+
+    if node.right:
+        pretty_print_tree(node.right, prefix + ("│   " if isLeft else "    "), False)
+
+    print(prefix + ("└── " if isLeft else "┌── ") + str(node.val))
+
+    if node.left:
+        pretty_print_tree(node.left, prefix + ("    " if isLeft else "│   "), True)
 
 #############################################################
 #############################################################
