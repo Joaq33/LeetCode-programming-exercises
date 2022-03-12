@@ -29,19 +29,22 @@ class Solution:
 
 obj = Solution()
 
-nums = [1, 2, 3, 4, -4, -3, -5, -1]
-assert (ret := obj.find132pattern(nums)) == False, ret
-
-nums = [3, 5, 0, 3, 4]
-assert (ret := obj.find132pattern(nums)) == True, ret
-
-nums = [1, 2, 5, 4]
-assert (ret := obj.find132pattern(nums)) == True, ret
+# nums = [1, 2, 3, 4, -4, -3, -5, -1]
+# assert (ret := obj.find132pattern(nums)) == False, ret
+#
+# nums = [3, 5, 0, 3, 4]
+# assert (ret := obj.find132pattern(nums)) == True, ret
+#
+# nums = [1, 2, 5, 4]
+# assert (ret := obj.find132pattern(nums)) == True, ret
+#
+# nums = [3, 1, 4, 2]
+# assert (ret := obj.find132pattern(nums)) == True, ret
+#
+# nums = [1, 2, 3, 4]
+# assert (ret := obj.find132pattern(nums)) == False, ret
 
 nums = [3, 1, 4, 2]
 assert (ret := obj.find132pattern(nums)) == True, ret
-
-nums = [1, 2, 3, 4]
-assert (ret := obj.find132pattern(nums)) == False, ret
 
 print("Tests passed.")

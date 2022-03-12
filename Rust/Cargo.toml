@@ -5,8 +5,8 @@ authors = ["Joaq33 <joakoillia@gmail.com>"]
 edition = "2018"
 
 [[bin]]
-name = "fizz_buzz"
-path = "uncompleted/fizz_buzz.rs"
+name = "132_pattern"
+path = "uncompleted/132_pattern.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
