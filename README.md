@@ -6,3 +6,4 @@ Solved LeetCode Weekly Workout Compilation
 - For Rust standalone execution I use cargo-eval and rust 1.52.1.
 
 TODO: add every solved exercise to repo
+TODO: scrape description into files
