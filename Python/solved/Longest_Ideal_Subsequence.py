@@ -35,25 +35,25 @@ class Solution:
     #
     #     return ans
     #
-    # def longestIdealString(self, s: str, k: int) -> int:
-    #     """
-    #     correct
-    #     it runs in O(26n)
-    #     it iterates the entire string once, storing the max value for each letter if it is in range inside a helper
-    #     array
-    #     :param s:
-    #     :param k:
-    #     :return:
-    #     """
-    #     array = [0 for i in range(27)]
-    #     for i in s:
-    #         mv = 0
-    #         for j in range(-k, k + 1):
-    #             if 0 <= j + ord(i) - ord('a') < 27:
-    #                 mv = max(mv, array[j + ord(i) - ord('a')])
-    #         array[ord(i) - ord('a')] = mv + 1
-    #
-    #     return max(array)
+    def longestIdealString(self, s: str, k: int) -> int:
+        """
+        correct
+        it runs in O(26n)
+        it iterates the entire string once, storing the max value for each letter if it is in range inside a helper
+        array
+        :param s:
+        :param k:
+        :return:
+        """
+        array = [0 for i in range(27)]
+        for i in s:
+            mv = 0
+            for j in range(-k, k + 1):
+                if 0 <= j + ord(i) - ord('a') < 27:
+                    mv = max(mv, array[j + ord(i) - ord('a')])
+            array[ord(i) - ord('a')] = mv + 1
+
+        return max(array)
 
     def longestIdealString(self, s: str, k: int) -> int:
         """best answer, optimized version of previous aproach
