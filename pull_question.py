@@ -27,16 +27,18 @@ question_json['content']}{"".join([f"<br><details><summary>Hint {i + 1}</summary
 folder_path = f"./Python/unsolved/{full_title}"
 if not os.path.exists(folder_path):
     os.mkdir(folder_path)
-print(f"Folder {folder_path} created")
+    print(f"Folder {folder_path} created")
 
-with open(f"{folder_path}/description.html", "w") as f:
-    f.write(html_output)
+    with open(f"{folder_path}/description.html", "w") as f:
+        f.write(html_output)
 
-print("Description file created")
+    print("Description file created")
 
-python_script_output = next(x['code'] for x in question_json['codeSnippets'] if x['lang'] == 'Python3')
+    python_script_output = next(x['code'] for x in question_json['codeSnippets'] if x['lang'] == 'Python3')
 
-with open(f"{folder_path}/solution.py", "w") as f:
-    f.write(python_script_output)
+    with open(f"{folder_path}/solution.py", "w") as f:
+        f.write(python_script_output)
 
-print("Script file created")
+    print("Script file created")
+else:
+    print("Folder already exists!")
