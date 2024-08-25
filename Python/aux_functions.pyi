@@ -5,6 +5,7 @@
 
 # infinite while counter (Optimal for bfs)
 from itertools import count
+from typing import List
 
 for step in count():
     print(step)
@@ -42,6 +43,24 @@ def bsearch(self, nums: List[int], target: int) -> int:
             right = pivot - 1
     return -1
 
+
+def dfs(self, root: TreeNode) -> list:
+    """
+    extraido de binary tree postorder traversal
+    :param self:
+    :param root:
+    :return:
+    """
+    ans = []
+    queue = [root]
+
+    while queue:
+        while node := queue.pop():
+            if node.val:
+                ans.append(node.val)
+            queue.append(node.left)
+            queue.append(node.right)
+    return ans[::-1]
 
 def bfs(self, root: TreeNode) -> int:
     """
@@ -184,6 +203,7 @@ class Bcolors:
 def list_to_btree(l: []) -> TreeNode:
     """
     Convert a list into a binary tree.
+    worse than option below
     :param l:
     :return:
     """
@@ -233,12 +253,32 @@ def btree_to_list(head: TreeNode) -> []:
             ans.append(None)
         for item in queue:
             rec(item)
-
     rec(head)
     last = len(ans) - 1
     while not ans[last]:
         last -= 1
     return ans[:last + 1]
+
+def creatBTree(lst: List) -> TreeNode:
+    """
+    create TreeNode from list input
+    better than above option
+    :param lst:
+    :return:
+    """
+    if len(lst) == 0:
+        return None
+    nodes = [None if val is None else TreeNode(val) for val in lst]
+    # nodes = [None if val == 'null' else TreeNode(int(val)) for val in string.strip('[]').split(',')]
+    kids = nodes[::-1]
+    root = kids.pop()
+    for node in nodes:
+        if node:
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
+    return root
 
 
 #############################################################
@@ -343,6 +383,7 @@ def string_to_treenode(input):
             node.right = TreeNode(rightNumber)
             nodeQueue.append(node.right)
     return root
+
 
 
 def pretty_print_tree(node, prefix="", isLeft=True):
