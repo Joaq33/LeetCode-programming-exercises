@@ -1,11 +1,23 @@
-# LeetCode-programming-exercises
-Solved LeetCode Weekly Workout Compilation
+# LeetCode Programming Exercises
 
-- To generate daily question work folder, run pull_question.py
+A collection of solved LeetCode exercises.
 
-- For Python scripts execution I use version 3.8 and 3.11
+## Setup
 
-- For Rust standalone execution I use cargo-eval and rust 1.52.1.
+To generate a daily question work folder, run the `pull_question.py` script:
 
-TODO: add every solved exercise to repo
-TODO: make pull_question.py script capable of pulling other languages
+```bash
+python pull_question.py
+```
+
+## Environment
+
+- **Python:** 
+  - Version: 3.8 and 3.11
+- **Rust:**
+  - Version: 1.52.1
+  - Tools: `cargo-eval` for standalone execution
+---
+#### TODO
+- Add all solved exercises to the repository.
+- Enhance `pull_question.py` to support additional programming languages.
