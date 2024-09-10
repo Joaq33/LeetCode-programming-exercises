@@ -2,7 +2,7 @@
 
 A collection of solved LeetCode exercises.
 
-## Setup
+## Setup 
 
 To generate a daily question work folder, run the `pull_question.py` script:
 
