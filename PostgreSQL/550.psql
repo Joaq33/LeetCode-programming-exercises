@@ -1,0 +1,9 @@
+select
+ round(cast(count(bp) as decimal)/count(ap),2) as fraction
+from (
+select a.player_id ap,b.player_id bp, row_number() over(partition by a.player_id order by a.event_date) as rown
+from Activity a
+left join Activity b
+on  a.player_id = b.player_id
+and b.event_date = a.event_date +1
+) where rown = 1
