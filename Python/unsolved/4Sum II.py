@@ -4,7 +4,7 @@ from collections import Counter
 
 
 class Solution:
-    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int: #time exceeded
+    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:  # time exceeded
         options = []
         # try:
         #     visited_a = {A[0]}
