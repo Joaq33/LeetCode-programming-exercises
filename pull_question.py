@@ -2,7 +2,6 @@ import os
 import requests
 import pandoc
 import sys
-from icecream import ic
 
 print("sys.argv", sys.argv, len(sys.argv))
 
@@ -21,8 +20,6 @@ def create_structure(_question_response):
     print("Full title:", full_title)
     html_output = f"""<body><h1><a href="https://leetcode.com{link}">{question_json['title']}</a></h1>{
     question_json['content']}{"".join([f"<br><details><summary>Hint {i + 1}</summary>{hint}</details>" for i, hint in enumerate(question_json['hints'])])}</body>"""
-    # html_output = f"""<title>{full_title}</title><body><h1><a href="https://leetcode.com{link}">{question_json['title']}</a></h1>{
-    # question_json['content']}{"".join([f"<br><details><summary>Hint {i + 1}</summary>{hint}</details>" for i, hint in enumerate(question_json['hints'])])}</body>"""
 
     md_output = html_to_md(html_output)
     folder_path = f"./Python/unsolved/{full_title}"
@@ -90,8 +87,6 @@ def get_problem_details(title_slug):
     }
 
     response = requests.request("POST", url, data=payload, headers=headers)
-
-    # print(response.text)
     return response.json()['data']['question']
 
 
@@ -101,23 +96,13 @@ if len(sys.argv) == 1:
 if len(sys.argv) == 2:
     print("Fetching problem", int(sys.argv[1]))
 
-    # Example: Fetch problem #454 (4Sum II)
     problem_slug_text = get_leetcode_problem_slug_text_by_number(int(sys.argv[1]))
-    print("problem_slug_text", problem_slug_text)
+    print("Problem-slug-text:", problem_slug_text)
     question_response = dict()
     question_inside = get_problem_details(problem_slug_text)
-    # ic(question_inside, question_inside.keys())
-    # question_inside['title']=question_inside['question']['title']
 
     question_response['question'] = question_inside
     question_response['link'] = f"/problems/{problem_slug_text}/"
-    # question_response['question']['questionFrontendId'] = sys.argv[1]
-    # question_response['question'] = f"/problems/{problem_slug_text}/"
-
-    # exit()
-    # fetch_all_response = fetch_all()
-    # ic(fetch_all_response)
 
 create_structure(_question_response=question_response)
 
-# TODO use pandoc to transform html to markdown

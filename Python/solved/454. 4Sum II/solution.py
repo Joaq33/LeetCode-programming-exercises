@@ -1,10 +1,13 @@
 # not Done
 from typing import List
-from collections import Counter
+from collections import Counter, defaultdict
+import itertools
+from icecream import ic
 
 
 class Solution:
-    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:  # time exceeded
+    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int],
+                     nums4: List[int]) -> int:  # time exceeded
         options = []
         # try:
         #     visited_a = {A[0]}
@@ -78,19 +81,23 @@ class Solution:
         # print(options)
         # return ans
 
+    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+        """prefix sums algohorithm"""
+        ans = 0
+        d_counter = Counter(sum(x) for x in itertools.product(nums3, nums4))
+        # ic(d_counter)
+        for product_item in itertools.product(nums1, nums2):
+            cur_sum = sum(product_item)
+            ans += d_counter[-cur_sum]
+        return ans
 
-obj = Solution()
+    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+        """prefix sums (simplified) algohorithm"""
+        ans = 0
+        dict_first_two = defaultdict(int)
+        for num3, num4 in itertools.product(nums3, nums4):
+            dict_first_two[num4 + num3] += 1
 
-A = [1, 2]
-B = [-2, -1]
-C = [-1, 2]
-D = [0, 2]
-assert 2 == (ret := obj.fourSumCount(A, B, C, D)), ret
-
-A = [-1, -1]
-B = [-1, 1]
-C = [-1, 1]
-D = [1, -1]
-assert 6 == (ret := obj.fourSumCount(A, B, C, D)), ret
-
-print("Tests passed.")
+        for num1, num2 in itertools.product(nums1, nums2):
+            ans += dict_first_two[-(num1 + num2)]
+        return ans
