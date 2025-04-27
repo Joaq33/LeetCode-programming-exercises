@@ -101,3 +101,28 @@ class Solution:
         for num1, num2 in itertools.product(nums1, nums2):
             ans += dict_first_two[-(num1 + num2)]
         return ans
+
+    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+        """
+        best time
+        prefix sums algohorithm with product of counters to skip iterations in case of repeated values
+        :param nums1:
+        :param nums2:
+        :param nums3:
+        :param nums4:
+        :return:
+        """
+        # hashmap = dict()
+        hashmap = defaultdict(int)
+        nums1_count, nums2_count = Counter(nums1), Counter(nums2)
+        nums3_count, nums4_count = Counter(nums3), Counter(nums4)
+        for num1, count1 in nums1_count.items():
+            for num2, count2 in nums2_count.items():
+                hashmap[num1 + num2] += count1 * count2
+
+        # Now do the same for (b + c) values and look for addative inverses in sum_dict
+        output = 0
+        for num3, count3 in nums3_count.items():
+            for num4, count4 in nums4_count.items():
+                output += hashmap[-(num3 + num4)] * (count3 * count4)
+        return output
