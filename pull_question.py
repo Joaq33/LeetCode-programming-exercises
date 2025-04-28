@@ -80,7 +80,7 @@ def get_leetcode_problem_slug_text_by_number(question_number):
 def get_problem_details(title_slug):
     url = "https://leetcode.com/graphql"
 
-    payload = "{\"query\":\"query questionData($titleSlug: String!) {\\n\\t\\n  question(titleSlug: $titleSlug) {\\n    questionId\\n    questionFrontendId\\n\\t\\ttitle\\n\\t\\tcontent\\n\\t\\tdifficulty\\n\\t\\texampleTestcases\\n\\t\\tcodeSnippets {\\n\\t\\t\\tlang\\n\\t\\t\\tlangSlug\\n\\t\\t\\tcode\\n\\t\\t}\\n\\t\\thints\\n  }\\n\\t\\n}\",\"variables\":{\"titleSlug\":\"4sum-ii\"},\"operationName\":\"questionData\"}"
+    payload = "{\"query\":\"query questionData($titleSlug: String!) {\\n\\t\\n  question(titleSlug: $titleSlug) {\\n    questionId\\n    questionFrontendId\\n\\t\\ttitle\\n\\t\\tcontent\\n\\t\\tdifficulty\\n\\t\\texampleTestcases\\n\\t\\tcodeSnippets {\\n\\t\\t\\tlang\\n\\t\\t\\tlangSlug\\n\\t\\t\\tcode\\n\\t\\t}\\n\\t\\thints\\n  }\\n\\t\\n}\",\"variables\":{\"titleSlug\":\""+title_slug+"\"},\"operationName\":\"questionData\"}"
     headers = {
         "cookie": "csrftoken=R9HLriOs2cznMU05QFMLATNf1AXNrEQCXQNxzFI6xW8fSxheGf7X3bMy5eZyM60i",
         "Content-Type": "application/json"
