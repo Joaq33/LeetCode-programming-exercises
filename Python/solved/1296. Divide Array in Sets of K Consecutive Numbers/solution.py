@@ -4,7 +4,7 @@ from icecream import ic
 
 
 class Solution:
-    def isPossibleDivide(self, nums: List[int], k: int) -> bool: #time exceeded
+    def isPossibleDivide(self, nums: List[int], k: int) -> bool:  # time exceeded
         if k == 1: return True
         if not len(nums) % k == 0: return False
         nums_sorted = sorted(nums)
@@ -74,6 +74,7 @@ class Solution:
         #     if
         # return
         # return True
+
     def isPossibleDivide(self, nums: List[int], k: int) -> bool:
         if len(nums) % k:
             return False
