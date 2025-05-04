@@ -26,6 +26,8 @@ class Solution:
         """
         solved as a series approach
         o(n)
+        can be improved constructing the output during counter creation(comparing current item to set),
+         one less iteration
         :param dominoes:
         :return:
         """
@@ -37,6 +39,5 @@ class Solution:
             # 2 - 1
             # 3 - 3
             # 4 - 6
-            ans += (x[1]**2 - x[1])//2
+            ans += (x[1] ** 2 - x[1]) // 2
         return ans
-
