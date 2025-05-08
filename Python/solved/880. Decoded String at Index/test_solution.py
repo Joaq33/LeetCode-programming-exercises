@@ -26,7 +26,7 @@ class Test(unittest.TestCase):
         ], [
             "AB2C32",
             7,
-            "a"
+            "B"
         ], [
             "a2345678999999999999999",
             1,
