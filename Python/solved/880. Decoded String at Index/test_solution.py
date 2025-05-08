@@ -39,7 +39,7 @@ class Test(unittest.TestCase):
             "cpmxv8ewnfk3xxcilcmm68d2ygc88daomywc3imncfjgtwj8nrxjtwhiem5nzqnicxzo248g52y72v3yujqpvqcssrofd99lkovg",
             480551547,
             "x"
-        ],[
+        ], [
 
             "a23b456789gh9999pqrs9999u99a9xyzpqrstuvw9",
             76797,
