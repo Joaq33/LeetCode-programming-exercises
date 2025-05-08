@@ -24,6 +24,10 @@ class Test(unittest.TestCase):
             5,
             "h"
         ], [
+            "AB2C32",
+            7,
+            "a"
+        ], [
             "a2345678999999999999999",
             1,
             "a"
@@ -31,6 +35,10 @@ class Test(unittest.TestCase):
             "leet2code3",
             10,
             "o"
+        ], [
+            "cpmxv8ewnfk3xxcilcmm68d2ygc88daomywc3imncfjgtwj8nrxjtwhiem5nzqnicxzo248g52y72v3yujqpvqcssrofd99lkovg",
+            480551547,
+            "x"
         ]
     ])
     def test_(self, s, k, expected):
