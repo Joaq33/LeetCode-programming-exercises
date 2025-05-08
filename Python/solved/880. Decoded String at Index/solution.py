@@ -1,4 +1,3 @@
-import logging
 from icecream import ic
 
 
@@ -33,4 +32,4 @@ class Solution:
                 if k == 0 or total == k:
                     return ch
                 total -= 1
-        # return ""
+        return ""
