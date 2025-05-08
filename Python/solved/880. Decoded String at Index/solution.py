@@ -19,23 +19,18 @@ class Solution:
         return cur_s[k - 1]
 
     def decodeAtIndex(self, s: str, k: int) -> str:
-        i = 0
-        for c in s:
-            if c.isdigit():
-                i *= int(c)
+        total = 0
+        for ch in s:
+            if ch.isdigit():
+                total *= int(ch)
             else:
-                i += 1
-        ic(i, k)
-        for c in s[::-1]:
-            ic('a', k, i)
-            k %= i
-            ic(' ', k, i)
-            if k == 0 and c.isalpha():
-                return c
-
-            if c.isdigit():
-                i /= int(c)
+                total += 1
+        for ch in reversed(s):
+            if ch.isdigit():
+                total //= int(ch)
+                k %= total
             else:
-                i -= 1
-
-        return Exception
+                if k == 0 or total == k:
+                    return ch
+                total -= 1
+        # return ""
