@@ -16,6 +16,11 @@ ic.use_stdout()
 class Test(unittest.TestCase):
     @parameterized.expand([
         [
+            "Eating no right now",
+            "Eating now",
+            True
+        ],
+        [
             "My name is Haley",
             "My Haley",
             True
