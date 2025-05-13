@@ -2,6 +2,7 @@ import os
 import requests
 import pandoc
 import sys
+from icecream import ic
 
 print("sys.argv", sys.argv, len(sys.argv))
 
@@ -14,11 +15,12 @@ def html_to_md(structured_html):
 
 
 def create_structure(_question_response):
+    ic(_question_response)
     link = _question_response['link']
     question_json = _question_response['question']
     full_title = f"{question_json['questionFrontendId']}. {question_json['title']}"
     print("Full title:", full_title)
-    html_output = f"""<body><h1><a href="https://leetcode.com{link}">{question_json['title']}</a></h1>{
+    html_output = f"""<body><h1><a href="https://leetcode.com{link}">{question_json['title']}</a></h1><h4><code>{question_json['difficulty']}</code></h4>{
     question_json['content']}{"".join([f"<br><details><summary>Hint {i + 1}</summary>{hint}</details>" for i, hint in enumerate(question_json['hints'])])}</body>"""
 
     md_output = html_to_md(html_output)

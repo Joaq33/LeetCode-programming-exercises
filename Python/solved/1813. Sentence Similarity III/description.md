@@ -1,4 +1,5 @@
-# [Sentence Similarity III](https://leetcode.com/problems/sentence-similarity-iii/)
+# [Sentence Similarity III](https://leetcode.com/problems/sentence-similarity-iii/) 
+#### `Medium` 
 
 You are given two strings `sentence1` and `sentence2`, each representing
 a **sentence** composed of words. A sentence is a list of **words** that
