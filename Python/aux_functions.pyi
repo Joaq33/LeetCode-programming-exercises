@@ -403,3 +403,45 @@ def pretty_print_tree(node, prefix="", isLeft=True):
 
 #############################################################
 #############################################################
+##--Efficient fact to dim matching example
+WITH dim_students AS (
+    SELECT
+        student_id,
+        student_name,
+        subject_name
+    FROM
+        Subjects,
+        Students
+),
+fact_exams AS (
+    SELECT
+        student_id,
+        subject_name,
+        COUNT(*) AS attended_exams
+    FROM
+        Examinations
+    GROUP BY
+        1,2
+),
+final AS (
+    SELECT
+        student_id,
+        student_name,
+        subject_name,
+        COALESCE(attended_exams, 0) AS attended_exams
+    FROM
+        dim_students
+    LEFT JOIN
+        fact_exams
+    USING(
+        student_id, subject_name
+    )
+)
+SELECT
+    *
+FROM
+    final
+ORDER BY
+    1,3
+#############################################################
+#############################################################
