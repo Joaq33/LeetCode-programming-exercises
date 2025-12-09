@@ -4,7 +4,7 @@ from pickle import FALSE
 from solution import Solution
 from icecream import ic
 from parameterized import parameterized
-print('asd')
+
 ic.use_stdout()
 
 
@@ -16,15 +16,15 @@ ic.use_stdout()
 class Test(unittest.TestCase):
     @parameterized.expand([
         [
-            [4, 2, 4, 5, 6],
-            17,
+            5,
+            2
         ],
         [
-            [5, 2, 1, 2, 5, 2, 1, 2, 5],
-            8,
+            10,
+            4
         ]
     ])
-    def test_(self, param1, expected):
+    def test_(self, n, expected):
         print()  # fix pycharm output
-        ic(param1, expected)
-        self.assertEqual(expected, Solution().maximumUniqueSubarray(nums=param1))
+        ic(n, expected)
+        self.assertEqual(expected, Solution().countTriples(n=n))
